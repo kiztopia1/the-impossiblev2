@@ -1,0 +1,17 @@
+[33mcommit 1b86add691801d960d73b204ae441944cde3e0cf[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: kiztopia1 <62418642+kiztopia1@users.noreply.github.com>
+Date:   Tue Nov 16 22:02:53 2021 -0700
+
+    ItemList added
+
+[33mcommit 072386f6b0e0a16c423138514141a764a88cd6f4[m
+Author: kiztopia1 <62418642+kiztopia1@users.noreply.github.com>
+Date:   Tue Nov 16 21:21:45 2021 -0700
+
+    aside and nav componenets added
+
+[33mcommit c39cf409bda13516b0cfdd1c83578fd9ba0572c8[m
+Author: kiztopia1 <62418642+kiztopia1@users.noreply.github.com>
+Date:   Tue Nov 16 09:17:31 2021 -0700
+
+    initalizing with vue cli

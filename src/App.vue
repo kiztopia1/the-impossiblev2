@@ -12,12 +12,22 @@ import ListItem from './components/ListItem'
 
 let data = [
       {
-        id:2,
-        name:'coding'
+        id:1,
+        name:'coding',
+        status: false,
+        sub: [
+          {
+            id:3,
+            name:'15 commits',
+            status: false
+          }
+        ]
       },
       {
         id:2,
-        name:'eating food'
+        name:'eating food',
+        status: false,
+        sub: []
       }]
 
 export default {
@@ -36,5 +46,7 @@ export default {
 </script>
 
 <style >
-
+.flex{
+  display: flex;
+}
 </style>
