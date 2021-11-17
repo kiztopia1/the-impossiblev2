@@ -1,27 +1,40 @@
 <template>
   <Nav user-name='kirubel'/>
   <Aside/>
+  <ListItem :items='data'/>
 </template>
 
 <script>
 
 import Nav from './components/Nav'
 import Aside from './components/Aside'
+import ListItem from './components/ListItem'
+
+let data = [
+      {
+        id:2,
+        name:'coding'
+      },
+      {
+        id:2,
+        name:'eating food'
+      }]
+
 export default {
   name: 'App',
   components: {
     Nav,
-    Aside
+    Aside,
+    ListItem
+  },
+  data: function() {
+    return{
+      data
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style >
+
 </style>
