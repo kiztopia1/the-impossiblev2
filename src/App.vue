@@ -1,67 +1,37 @@
 <template>
-  <Nav user-name='kirubel'/>
-  <Aside/>
-  <ListItem :items='data'/>
-  <AddItem @add-item='addItem'/>
+  <Nav/>
+  <router-view/>
 </template>
 
 <script>
-
-import Nav from './components/Nav'
-import Aside from './components/Aside'
-import ListItem from './components/ListItem'
-import AddItem from './components/AddItem'
-
-let data = [
-      {
-        id:1,
-        name:'coding',
-        status: false,
-        sub: [
-          {
-            id:3,
-            name:'15 commits',
-            status: false
-          }
-        ]
-      },
-      {
-        id:2,
-        name:'eating food',
-        status: false,
-        sub: []
-      }]
-
+import Nav from './components/Nav.vue'
 export default {
-  name: 'App',
   components: {
-    Nav,
-    Aside,
-    ListItem,
-    AddItem
-  },
-  data: function() {
-    return{
-      data
-    }
-  },
-  methods:{
-    addItem (name, cat) {
-            let item = {
-                name: name,
-                id: 33,
-                cat: cat,
-                sub: []
-            }
-            this.data.push(item)
-            console.log(item)
-        }
+    Nav
   }
 }
 </script>
 
-<style >
-.flex{
-  display: flex;
+<style>
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
