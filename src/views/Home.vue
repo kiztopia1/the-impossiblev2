@@ -39,7 +39,7 @@ let data = [
   },
 ]
 import Aside from '@/components/Aside'
-import AddItem from '@/components/AddItem'
+import AddItem from '@/views/AddItem'
 import ListItem from '../components/ListItem.vue'
 export default {
   name: 'Home',
