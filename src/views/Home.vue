@@ -1,7 +1,7 @@
 <template>
   <Aside/>
   <add-item/>
-  <ListItem :items="data"/>
+  <ListItem :items="data" cat-name="main"/>
 </template>
 
 <script>
@@ -37,7 +37,7 @@ import AddItem from '@/components/AddItem'
 import ListItem from '../components/ListItem.vue'
 export default {
   name: 'Home',
-  methods: function (){
+  data: function (){
     return{
       data
     }
