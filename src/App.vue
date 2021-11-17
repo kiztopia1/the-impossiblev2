@@ -2,6 +2,7 @@
   <Nav user-name='kirubel'/>
   <Aside/>
   <ListItem :items='data'/>
+  <AddItem @add-item='addItem'/>
 </template>
 
 <script>
@@ -9,6 +10,7 @@
 import Nav from './components/Nav'
 import Aside from './components/Aside'
 import ListItem from './components/ListItem'
+import AddItem from './components/AddItem'
 
 let data = [
       {
@@ -35,12 +37,25 @@ export default {
   components: {
     Nav,
     Aside,
-    ListItem
+    ListItem,
+    AddItem
   },
   data: function() {
     return{
       data
     }
+  },
+  methods:{
+    addItem (name, cat) {
+            let item = {
+                name: name,
+                id: 33,
+                cat: cat,
+                sub: []
+            }
+            this.data.push(item)
+            console.log(item)
+        }
   }
 }
 </script>
