@@ -1,7 +1,13 @@
 <template>
+<div class="home">
+
+
   <Aside/>
-  <add-item/>
-  <ListItem :items="data" cat-name="main"/>
+  <div class="main">
+    <add-item/>
+    <ListItem :items="data" cat-name="main"/>
+  </div>
+</div>
 </template>
 
 <script>
@@ -49,3 +55,8 @@ export default {
   }
 }
 </script>
+<style>
+.home{
+  display:flex;
+}
+</style>
