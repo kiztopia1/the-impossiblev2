@@ -28,7 +28,10 @@ body{
   color: #2c3e50;
   margin:0;
   padding: 0;
-}
 
+}
+.flex{
+  display: flex;
+}
 
 </style>

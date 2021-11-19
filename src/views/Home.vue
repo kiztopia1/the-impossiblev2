@@ -21,27 +21,27 @@
 let data = [
   {
     id: 1,
-    name: 'coading',
+    name: 'learn vue',
     status: false,
     cat:'work',
     sub: [
       {
         id:4,
-        name: '100 lines',
+        name: 'build 2 apps with vue',
         status: false
       }
     ]
   },
   {
     id: 2,
-    name: 'coading',
+    name: 'build the amzon clone',
     status: false,
     cat:'work',
     sub: []
   },
   {
     id: 3,
-    name: 'coading',
+    name: '100 push up',
     status: false,
     cat:'sport ',
     sub: []
@@ -75,6 +75,7 @@ export default {
           ]
         }
       this.data.push(newItem)
+
     }
   },
   created(){

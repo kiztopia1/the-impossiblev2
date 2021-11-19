@@ -1,16 +1,19 @@
 <template>
     <div class="list-item">
-        {{catName}}
+        <h2>{{catName}}</h2>
+        <hr>
         <div>
             <li 
             v-for="item in items" 
             :key='item.id'
-            class="flex"
+            class="item"
             >
-                <input type="checkbox" name="status" id="{{item.id}}"
-                @click="check(item.id)"
+                <div class="flex">
+                    <input type="checkbox" name="status" id="{{item.id}}"
+                    @click="check(item.id)"
                 >
                 <p :class='{done:item.status}'>{{ item.name }}</p>
+                </div>   
                 <div v-if="item.sub[0]" class="sub-lists">
                     <div v-for="item  in  item.sub" :key='item.id' class="sub-list flex">
                         <input type="checkbox" name="status" id="{{item.id}}">
@@ -43,5 +46,14 @@ export default {
 .done{
     color:rgb(86, 214, 96);
     text-decoration: line-through;
+}
+.sub-lists{
+    margin-left:30px ;
+}
+.item{
+    list-style: none;
+}
+input{
+    margin-right:7px;
 }
 </style>
