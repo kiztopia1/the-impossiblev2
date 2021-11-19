@@ -5,8 +5,13 @@
   <Aside/>
   <div class="main">
     <add-item @add-item="addItem" />
-
-    <ListItem :items="data" cat-name="main"/>
+    <div
+      v-for='cat in newItems'
+      :key="cat.name"
+    >
+      <ListItem :items='cat.data' :catName="cat.name"/> 
+    </div>
+    
   </div>
 </div>
 </template>
@@ -18,7 +23,7 @@ let data = [
     id: 1,
     name: 'coading',
     status: false,
-    cat:'',
+    cat:'work',
     sub: [
       {
         id:4,
@@ -31,14 +36,14 @@ let data = [
     id: 2,
     name: 'coading',
     status: false,
-    cat:'',
+    cat:'work',
     sub: []
   },
   {
     id: 3,
     name: 'coading',
     status: false,
-    cat:'',
+    cat:'sport ',
     sub: []
   },
 ]
@@ -62,7 +67,7 @@ export default {
     addItem (name, cat){
       
       let newItem = {
-          id: 7,
+          id: 4,
           name,
           status: false,
           cat,
@@ -76,21 +81,27 @@ export default {
     let cats = []
     let newItems = []
     this.data.map(item => {
+      console.log(item,'item')
       if(cats.indexOf(item.cat) == -1){
-        newItems.push({name:item.cat,data:item})
+        newItems.push(
+          {'name':item.cat,'data':[item]}
+          )
+        cats.push(item.cat)
       }
       else{
-        newItems.map(cat => {
-          if(cat.name == item.cat){
-            cat.push(item)
+        newItems.filter(function(elem){
+          if(elem.name == item.cat){
+            elem.data.push(item)
           }
-        })
+        })  
       }
     })
-    this.newItems == newItems
+    this.newItems = newItems
+    console.log(this.newItems,'bom')
   }
 }
 </script>
+
 <style>
 .home{
   display:flex;
