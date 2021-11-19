@@ -4,7 +4,7 @@
 
   <Aside/>
   <div class="main">
-    <add-item/>
+    <add-item @add-item="addItem" />
     <ListItem :items="data" cat-name="main"/>
   </div>
 </div>
@@ -17,6 +17,7 @@ let data = [
     id: 1,
     name: 'coading',
     status: false,
+    cat:'',
     sub: [
       {
         id:4,
@@ -29,12 +30,14 @@ let data = [
     id: 2,
     name: 'coading',
     status: false,
+    cat:'',
     sub: []
   },
   {
     id: 3,
     name: 'coading',
     status: false,
+    cat:'',
     sub: []
   },
 ]
@@ -45,13 +48,28 @@ export default {
   name: 'Home',
   data: function (){
     return{
-      data
+      data,
+      newItems: [],
     }
   },
   components: {
     AddItem,
     Aside,
     ListItem
+  },
+  methods: {
+    addItem (name, cat){
+      
+      let newItem = {
+          id: 7,
+          name,
+          status: false,
+          cat,
+          sub: [
+          ]
+        }
+      this.data.push(newItem)
+    }
   }
 }
 </script>
