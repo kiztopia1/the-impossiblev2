@@ -5,6 +5,7 @@
   <Aside/>
   <div class="main">
     <add-item @add-item="addItem" />
+
     <ListItem :items="data" cat-name="main"/>
   </div>
 </div>
@@ -70,6 +71,23 @@ export default {
         }
       this.data.push(newItem)
     }
+  },
+  created(){
+    let cats = []
+    let newItems = []
+    this.data.map(item => {
+      if(cats.indexOf(item.cat) == -1){
+        newItems.push({name:item.cat,data:item})
+      }
+      else{
+        newItems.map(cat => {
+          if(cat.name == item.cat){
+            cat.push(item)
+          }
+        })
+      }
+    })
+    this.newItems == newItems
   }
 }
 </script>
