@@ -21,7 +21,6 @@
                         @click="subCheck(item, sub)"
                         >
                         <p :class='{done:sub.status}'> {{ sub.name }}</p>
-                        
                     </div>
                 </div>
             </li>
@@ -42,16 +41,17 @@ export default {
             item.status = !item.status;
         },
         subCheck (item, sub){
-            let targetItem = this.items.filter(item => item.id == item.id )[0]
+            let targetItem = this.items.filter(targetItem => targetItem.id == item.id )[0]
             let subItem = targetItem.sub.filter(subItem => subItem == sub )[0]
             subItem.status = !subItem.status
         }
         
+    },
+    computed: {
+        
     }
 }
 </script>
-
-
 
 
 <style>

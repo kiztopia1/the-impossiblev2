@@ -54,14 +54,28 @@ export default {
           sub: [
           ]
         }
-      this.data.push(newItem)
-      this.sort()
+      let status = false
+      this.data.map(oldItem => {
+        if(oldItem.name == newItem.name){
+          status = true
+        }else{
+          status = false
+        }
+      })
+      
+      console.log(status, 'this is tatus')
+      if (status == false){
+        this.data.push(newItem)
+        this.sort()
+      }
+      
     },
+
     sort (){
             let cats = []
             let newItems = []
             this.data.map(item => {
-              console.log(item,'item')
+              
               if(cats.indexOf(item.cat) == -1){
                 newItems.push(
                   {'name':item.cat,'data':[item]}
@@ -77,7 +91,7 @@ export default {
               }
             })
             this.newItems = newItems
-            console.log(this.newItems,'bom')
+            
         }
   },
   created(){
