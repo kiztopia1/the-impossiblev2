@@ -15,9 +15,13 @@
                 <p :class='{done:item.status}'>{{ item.name }}</p>
                 </div>   
                 <div v-if="item.sub[0]" class="sub-lists">
-                    <div v-for="item  in  item.sub" :key='item.id' class="sub-list flex">
-                        <input type="checkbox" name="status" id="{{item.id}}">
-                        {{ item.name }}
+                    <div v-for="sub  in  item.sub" :key='sub.id' class="sub-list flex">
+                        <input 
+                        type="checkbox" name="status" id="{{sub.id}}"
+                        @click="subCheck(item, sub)"
+                        >
+                        <p :class='{done:sub.status}'> {{ sub.name }}</p>
+                        
                     </div>
                 </div>
             </li>
@@ -34,15 +38,22 @@ export default {
     },
     methods: {
         check (id) {
-            console.log(id, this.items)
-            let task = this.items.filter(task => task.id == id )[0]
-            console.log(task)
-            task.status = !task.status;
+            let item = this.items.filter(item => item.id == id )[0]
+            item.status = !item.status;
         },
+        subCheck (item, sub){
+            let targetItem = this.items.filter(item => item.id == item.id )[0]
+            let subItem = targetItem.sub.filter(subItem => subItem == sub )[0]
+            subItem.status = !subItem.status
+        }
         
     }
 }
 </script>
+
+
+
+
 <style>
 .done{
     color:rgb(86, 214, 96);

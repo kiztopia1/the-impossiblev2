@@ -20,31 +20,12 @@
 // @ is an alias to /src
 let data = [
   {
-    id: 1,
-    name: 'learn vue',
-    status: false,
-    cat:'work',
-    sub: [
-      {
-        id:4,
-        name: 'build 2 apps with vue',
-        status: false
-      }
-    ]
+    id: 1,name: 'learn vue',status: false,cat:'work',sub: [{id:4,name: 'build 2 apps with vue',status: false}]
   },
   {
-    id: 2,
-    name: 'build the amzon clone',
-    status: false,
-    cat:'work',
-    sub: []
-  },
+    id: 2,name: 'build the amzon clone',status: false,cat:'work',sub: []},
   {
-    id: 3,
-    name: '100 push up',
-    status: false,
-    cat:'sport ',
-    sub: []
+    id: 3,name: '100 push up',status: false,cat:'sport ',sub: []
   },
 ]
 import Aside from '@/components/Aside'
