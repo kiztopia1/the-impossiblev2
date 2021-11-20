@@ -38,7 +38,8 @@ export default {
             let task = this.items.filter(task => task.id == id )[0]
             console.log(task)
             task.status = !task.status;
-        }
+        },
+        
     }
 }
 </script>

@@ -65,7 +65,6 @@ export default {
   },
   methods: {
     addItem (name, cat){
-      
       let newItem = {
           id: 4,
           name,
@@ -75,30 +74,33 @@ export default {
           ]
         }
       this.data.push(newItem)
-
-    }
+      this.sort()
+    },
+    sort (){
+            let cats = []
+            let newItems = []
+            this.data.map(item => {
+              console.log(item,'item')
+              if(cats.indexOf(item.cat) == -1){
+                newItems.push(
+                  {'name':item.cat,'data':[item]}
+                  )
+                cats.push(item.cat)
+              }
+              else{
+                newItems.filter(function(elem){
+                  if(elem.name == item.cat){
+                    elem.data.push(item)
+                  }
+                })  
+              }
+            })
+            this.newItems = newItems
+            console.log(this.newItems,'bom')
+        }
   },
   created(){
-    let cats = []
-    let newItems = []
-    this.data.map(item => {
-      console.log(item,'item')
-      if(cats.indexOf(item.cat) == -1){
-        newItems.push(
-          {'name':item.cat,'data':[item]}
-          )
-        cats.push(item.cat)
-      }
-      else{
-        newItems.filter(function(elem){
-          if(elem.name == item.cat){
-            elem.data.push(item)
-          }
-        })  
-      }
-    })
-    this.newItems = newItems
-    console.log(this.newItems,'bom')
+      this.sort()
   }
 }
 </script>
